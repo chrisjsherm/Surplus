@@ -1,0 +1,207 @@
+﻿@model SurplusPrototype.Models.SurplusRequest
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row hidden-print">
+    <div class="col-md-12">
+        <h2>You're not finished!</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sit amet ex at ipsum consectetur
+            euismod. Quisque lacinia, dui eget viverra ultricies, dolor enim tincidunt mauris, eu malesuada
+            mauris neque et magna. Pellentesque eget felis non magna malesuada semper ac id odio.
+        </p>
+
+        <p>
+            <input type="button" class="btn btn-default" value="Print form" onclick="window.print()" />
+            <noscript>
+                JavaScript is not enabled in your browser. Select print from your browser window.
+            </noscript>
+        </p>
+    </div>
+</div>
+
+
+<div>
+    <h4>Surplus request</h4>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemCondition.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ItemCondition.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityDescription.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityDescription.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VTBarcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VTBarcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Manufacturer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Manufacturer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SerialNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SerialNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstimatedValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstimatedValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountingFund)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountingFund)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MailCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MailCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressLine1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressLine1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressLine2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressLine2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Building)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Building)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FloorLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FloorLevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorizerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorizerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalDetails)
+        </dd>
+
+        <dd>
+            Authorizer signature
+        </dd>
+    </dl>
+</div>
+
+<p class="hidden-print">
+    @Html.ActionLink("Create another request", "Create")
+</p>
