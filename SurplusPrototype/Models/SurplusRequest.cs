@@ -53,11 +53,17 @@ namespace SurplusPrototype.Models
 
         [Required]
         [StringLength(6, MinimumLength = 6,
-            ErrorMessage = "A six digit accounting fund is required.")]
+            ErrorMessage = ACCOUNTING_FUND_ERROR_MSG)]
+        [RegularExpression(NUMERIC_ONLY_NO_SPACES_REGEX,
+            ErrorMessage = ACCOUNTING_FUND_ERROR_MSG)]
         [Display(Name = "Accounting fund")]
         public string AccountingFund { get; set; }
 
         [Required]
+        [StringLength(6, MinimumLength = 6,
+            ErrorMessage = DEPARTMENT_NUMBER_ERROR_MSG)]
+        [RegularExpression(NUMERIC_ONLY_NO_SPACES_REGEX, 
+            ErrorMessage = DEPARTMENT_NUMBER_ERROR_MSG)]
         [Display(Name = "Organization code")]
         public string DepartmentNumber { get; set; }
 
@@ -89,5 +95,9 @@ namespace SurplusPrototype.Models
         [StringLength(200)]
         [Display(Name = "Additional details")]
         public string AdditionalDetails { get; set; }
+
+        private const string ACCOUNTING_FUND_ERROR_MSG = "A six digit accounting fund is required.";
+        private const string DEPARTMENT_NUMBER_ERROR_MSG = "A six digit organization code is required.";
+        private const string NUMERIC_ONLY_NO_SPACES_REGEX = @"^\d+$";
     }
 }

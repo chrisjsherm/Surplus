@@ -142,6 +142,10 @@
     <Compile Include="Migrations\201502171905121_DropUnnecessaryAddressFields.Designer.cs">
       <DependentUpon>201502171905121_DropUnnecessaryAddressFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502172051092_NumericStringProps.cs" />
+    <Compile Include="Migrations\201502172051092_NumericStringProps.Designer.cs">
+      <DependentUpon>201502172051092_NumericStringProps.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ItemCondition.cs" />
     <Compile Include="Models\QuantityDescription.cs" />
@@ -218,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502171905121_DropUnnecessaryAddressFields.resx">
       <DependentUpon>201502171905121_DropUnnecessaryAddressFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502172051092_NumericStringProps.resx">
+      <DependentUpon>201502172051092_NumericStringProps.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
