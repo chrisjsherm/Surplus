@@ -64,21 +64,11 @@ namespace SurplusPrototype.Models
         public string MailCode { get; set; }
 
         [Required]
-        [Display(Name = "Address line 1")]
-        public string AddressLine1 { get; set; }
-
-        [Display(Name = "Address line 2")]
-        public string AddressLine2 { get; set; }
-
-        [Required]
         public string Building { get; set; }
 
         [Required]
         [Display(Name = "Room")]
         public string FloorLevel { get; set; }
-
-        [Required]
-        public string City { get; set; }
 
         [Required]
         [Display(Name = "Contact name")]
