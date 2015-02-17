@@ -18,7 +18,7 @@
         <div class="form-group required">
             @Html.LabelFor(model => model.VTBarcode, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.VTBarcode, new { htmlAttributes = new { @class = "form-control", Value = "N/A" } })
+                @Html.EditorFor(model => model.VTBarcode, new { htmlAttributes = new { @class = "form-control", Value = System.Web.Configuration.WebConfigurationManager.AppSettings["notFixedAssetSentinal"] } })
                 @Html.ValidationMessageFor(model => model.VTBarcode, "", new { @class = "text-danger" })
             </div>
         </div>

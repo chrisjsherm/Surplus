@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SurplusPrototype.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -9,6 +10,7 @@ using System.Web;
 
 namespace SurplusPrototype.Models
 {
+    [CustomValidation(typeof(FixedAssetValidationAttribute), "HasValidFixedAssetQuantity")]
     public class SurplusRequest
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
