@@ -12,7 +12,7 @@ namespace SurplusPrototype.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
-        [Display(Name = "Quantity")]
+        [Display(Name = "Quantity description")]
         public string Name { get; set; }
     }
 }

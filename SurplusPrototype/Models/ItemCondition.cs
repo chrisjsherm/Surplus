@@ -12,6 +12,7 @@ namespace SurplusPrototype.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
+        [Display(Name = "Condition")]
         public string Name { get; set; }
     }
 }
