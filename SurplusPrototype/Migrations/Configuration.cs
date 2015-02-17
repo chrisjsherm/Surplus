@@ -23,7 +23,7 @@ namespace SurplusPrototype.Migrations
                 new ItemCondition { Name = "Poor" },
                 new ItemCondition { Name = "Needs repair" }
             };
-            itemConditions.ForEach(c => context.ItemConditions.AddOrUpdate(c));
+            itemConditions.ForEach(c => context.ItemConditions.AddOrUpdate(x => x.Name, c));
             context.SaveChanges();
 
             var quantityDescriptions = new List<QuantityDescription>
@@ -32,7 +32,7 @@ namespace SurplusPrototype.Migrations
                 new QuantityDescription { Name = "Small lot" },
                 new QuantityDescription { Name = "Large lot" }
             };
-            quantityDescriptions.ForEach(d => context.QuantityDescriptions.AddOrUpdate(d));
+            quantityDescriptions.ForEach(d => context.QuantityDescriptions.AddOrUpdate(x => x.Name, d));
             context.SaveChanges();
         }
     }

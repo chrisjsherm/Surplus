@@ -56,7 +56,7 @@ namespace SurplusPrototype.Models
         public string AccountingFund { get; set; }
 
         [Required]
-        [Display(Name = "Department number")]
+        [Display(Name = "Organization code")]
         public string DepartmentNumber { get; set; }
 
         [StringLength(4)]
