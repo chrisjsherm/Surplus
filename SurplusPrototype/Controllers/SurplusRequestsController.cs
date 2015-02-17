@@ -16,11 +16,14 @@ namespace SurplusPrototype.Controllers
         private SurplusDbContext db = new SurplusDbContext();
 
         // GET: SurplusRequests
-        //public ActionResult Index()
-        //{
-        //    var surplusRequests = db.SurplusRequests.Include(s => s.ItemCondition).Include(s => s.QuantityDescription);
-        //    return View(surplusRequests.ToList());
-        //}
+        public ActionResult Index()
+        {
+            var surplusRequests = db.SurplusRequests
+                .Include(s => s.ItemCondition)
+                .Include(s => s.QuantityDescription);
+
+            return View(surplusRequests.ToList());
+        }
 
         // GET: SurplusRequests/Details/5
         public ActionResult Details(int? id)
@@ -29,7 +32,11 @@ namespace SurplusPrototype.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SurplusRequest surplusRequest = db.SurplusRequests.Find(id);
+            SurplusRequest surplusRequest = db.SurplusRequests
+                .Include(s => s.ItemCondition)
+                .Include(s => s.QuantityDescription)
+                .SingleOrDefault(s => s.Id == id);
+
             if (surplusRequest == null)
             {
                 return HttpNotFound();
@@ -42,6 +49,7 @@ namespace SurplusPrototype.Controllers
         {
             ViewBag.ItemConditionId = new SelectList(db.ItemConditions, "Id", "Name");
             ViewBag.QuantityDescriptionId = new SelectList(db.QuantityDescriptions, "Id", "Name");
+
             return View();
         }
 

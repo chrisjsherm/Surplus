@@ -22,162 +22,116 @@
     </div>
 </div>
 
-
-<div>
-    <h4>Surplus request</h4>
-
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ItemCondition.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ItemCondition.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.QuantityDescription.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.QuantityDescription.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.VTBarcode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.VTBarcode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Manufacturer)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Manufacturer)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Model)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Model)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SerialNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SerialNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EstimatedValue)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EstimatedValue)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AccountingFund)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AccountingFund)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DepartmentNumber)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DepartmentNumber)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MailCode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MailCode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Building)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Building)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FloorLevel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FloorLevel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ContactPhone)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ContactPhone)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AuthorizerName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AuthorizerName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AdditionalDetails)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AdditionalDetails)
-        </dd>
-
-        <dd>
-            Authorizer signature
-        </dd>
-    </dl>
+<div class="row">
+    <div class="col-xs-12">
+        Surplus request #@Html.DisplayFor(model => model.Id)
+        <hr />
+    </div>
 </div>
 
-<p class="hidden-print">
-    @Html.ActionLink("Create another request", "Create")
-</p>
+<div class="row">
+    <div class="col-xs-12">
+        <label>@Html.DisplayNameFor(model => model.Description)</label>
+        <span>@Html.DisplayFor(model => model.Description)</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <label>@Html.DisplayNameFor(model => model.VTBarcode)</label>
+        <span>@Html.DisplayFor(model => model.VTBarcode)</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-4">
+        <label>@Html.DisplayNameFor(model => model.Manufacturer)</label>
+        <span>@Html.DisplayFor(model => model.Manufacturer)</span>
+    </div>
+
+    <div class="col-xs-4">
+        <label>@Html.DisplayNameFor(model => model.Model)</label>
+        <span>@Html.DisplayFor(model => model.Model)</span>
+    </div>
+
+    <div class="col-xs-4">
+        <label>@Html.DisplayNameFor(model => model.Quantity)</label>
+        <span>@Html.DisplayFor(model => model.Quantity) (@Html.DisplayFor(model => model.QuantityDescription.Name))</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-3">
+        <label>@Html.DisplayNameFor(model => model.SerialNumber)</label>
+        <span>@Html.DisplayFor(model => model.SerialNumber)</span>
+    </div>
+
+    <div class="col-xs-3">
+        <label>@Html.DisplayNameFor(model => model.EstimatedValue)</label>
+        <span>@Html.DisplayFor(model => model.EstimatedValue)</span>
+    </div>
+
+    <div class="col-xs-6">
+        <label>@Html.DisplayNameFor(model => model.ItemCondition.Name)</label>
+        <span>@Html.DisplayFor(model => model.ItemCondition.Name)</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-6">
+        <label>@Html.DisplayNameFor(model => model.DepartmentNumber)</label>
+        <span>@Html.DisplayFor(model => model.DepartmentNumber)</span>
+    </div>
+
+    <div class="col-xs-3">
+        <label>@Html.DisplayNameFor(model => model.MailCode)</label>
+        <span>@Html.DisplayFor(model => model.MailCode)</span>
+    </div>
+
+    <div class="col-xs-3">
+        <label>@Html.DisplayNameFor(model => model.AccountingFund)</label>
+        <span>@Html.DisplayFor(model => model.AccountingFund)</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <label>@Html.DisplayNameFor(model => model.Building)</label>
+        <span>@Html.DisplayFor(model => model.FloorLevel) @Html.DisplayFor(model => model.Building)</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-6">
+        <label>@Html.DisplayNameFor(model => model.ContactName)</label>
+        <span>@Html.DisplayFor(model => model.ContactName)</span>
+    </div>
+
+    <div class="col-xs-6">
+        <label>@Html.DisplayNameFor(model => model.ContactPhone)</label>
+        <span>@Html.DisplayFor(model => model.ContactPhone)</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <label>@Html.DisplayNameFor(model => model.AuthorizerName)</label>
+        <span>@Html.DisplayFor(model => model.AuthorizerName)</span>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-8">
+        <label>Signature</label>
+    </div>
+
+    <div class="col-xs-4">
+        <label>Date</label>
+    </div>
+</div>
+
+<div class="row hidden-print">
+    <div class="col-xs-12">
+        @Html.ActionLink("Create another request", "Create")
+    </div>
+</div>
