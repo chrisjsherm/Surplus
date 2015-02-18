@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using SurplusPrototype.Models;
 using System.Web.Configuration;
 
@@ -26,7 +24,7 @@ namespace SurplusPrototype.DataAccess
             }
 
             return new ValidationResult("Fixed assets must have a " +
-                "quantity equal to one.", new List<string> { "Quantity" });
+                "quantity equal to one.", new List<string>() { "Quantity" });
         }
     }
 }

@@ -16,14 +16,14 @@ namespace SurplusPrototype.Controllers
         private SurplusDbContext db = new SurplusDbContext();
 
         // GET: SurplusRequests
-        public ActionResult Index()
-        {
-            var surplusRequests = db.SurplusRequests
-                .Include(s => s.ItemCondition)
-                .Include(s => s.QuantityDescription);
+        //public ActionResult Index()
+        //{
+        //    var surplusRequests = db.SurplusRequests
+        //        .Include(s => s.ItemCondition)
+        //        .Include(s => s.QuantityDescription);
 
-            return View(surplusRequests.ToList());
-        }
+        //    return View(surplusRequests.ToList());
+        //}
 
         // GET: SurplusRequests/Details/5
         public ActionResult Details(int? id)
