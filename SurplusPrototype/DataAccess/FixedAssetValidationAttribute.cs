@@ -14,7 +14,7 @@ namespace SurplusPrototype.DataAccess
         {
             var barcode = surplusRequest.VTBarcode;
             if (barcode == WebConfigurationManager
-                .AppSettings["notFixedAssetSentinal"])
+                .AppSettings["notFixedAssetSentinel"])
             {
                 return ValidationResult.Success;
             }
