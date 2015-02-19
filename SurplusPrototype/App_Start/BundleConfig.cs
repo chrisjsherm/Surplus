@@ -20,14 +20,12 @@ namespace SurplusPrototype
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap-sass-official/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
-                                    "~/Scripts/jquery.inputmask/jquery.inputmask.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/css/app.css",
                       "~/Content/site.css",
                       "~/Content/app.css"));
         }
