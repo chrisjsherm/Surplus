@@ -47,8 +47,10 @@ namespace SurplusPrototype.Controllers
         // GET: SurplusRequests/Create
         public ActionResult Create()
         {
-            ViewBag.ItemConditionId = new SelectList(db.ItemConditions, "Id", "Name");
-            ViewBag.QuantityDescriptionId = new SelectList(db.QuantityDescriptions, "Id", "Name");
+            ViewBag.ItemConditionId = new SelectList(db.ItemConditions, "Id", "Name")
+                .OrderBy(c => c.Text);
+            ViewBag.QuantityDescriptionId = new SelectList(db.QuantityDescriptions, "Id", "Name")
+                .OrderBy(c => c.Text);
 
             return View();
         }
@@ -69,7 +71,8 @@ namespace SurplusPrototype.Controllers
 
             ViewBag.ItemConditionId = new SelectList(db.ItemConditions, "Id", "Name", surplusRequest.ItemConditionId)
                 .OrderBy(i => i.Text);
-            ViewBag.QuantityDescriptionId = new SelectList(db.QuantityDescriptions, "Id", "Name", surplusRequest.QuantityDescriptionId);
+            ViewBag.QuantityDescriptionId = new SelectList(db.QuantityDescriptions, "Id", "Name", surplusRequest.QuantityDescriptionId)
+                .OrderBy(i => i.Text); ;
             return View(surplusRequest);
         }
 
