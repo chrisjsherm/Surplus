@@ -3,10 +3,19 @@ namespace SurplusPrototype.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.FixedAsset",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        AssetNumber = c.String(nullable: false, maxLength: 9),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.ItemCondition",
                 c => new
@@ -30,7 +39,7 @@ namespace SurplusPrototype.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        VTBarcode = c.String(maxLength: 8),
+                        VTBarcode = c.String(nullable: false, maxLength: 9),
                         Description = c.String(nullable: false, maxLength: 50),
                         Manufacturer = c.String(maxLength: 35),
                         Model = c.String(maxLength: 30),
@@ -40,11 +49,12 @@ namespace SurplusPrototype.Migrations
                         EstimatedValue = c.Int(),
                         ItemConditionId = c.Guid(nullable: false),
                         AccountingFund = c.String(nullable: false, maxLength: 6),
-                        DepartmentNumber = c.String(nullable: false),
+                        DepartmentNumber = c.String(nullable: false, maxLength: 6),
                         MailCode = c.String(maxLength: 4),
-                        ItemLocation = c.String(nullable: false),
+                        Building = c.String(nullable: false),
+                        FloorLevel = c.String(nullable: false),
                         ContactName = c.String(nullable: false),
-                        ContactPhone = c.String(nullable: false),
+                        ContactPhone = c.String(nullable: false, maxLength: 10),
                         AuthorizerName = c.String(nullable: false),
                         AdditionalDetails = c.String(maxLength: 200),
                     })
@@ -62,9 +72,11 @@ namespace SurplusPrototype.Migrations
             DropForeignKey("dbo.SurplusRequest", "ItemConditionId", "dbo.ItemCondition");
             DropIndex("dbo.SurplusRequest", new[] { "ItemConditionId" });
             DropIndex("dbo.SurplusRequest", new[] { "QuantityDescriptionId" });
+            DropIndex("dbo.FixedAsset", new[] { "AssetNumber" });
             DropTable("dbo.SurplusRequest");
             DropTable("dbo.QuantityDescription");
             DropTable("dbo.ItemCondition");
+            DropTable("dbo.FixedAsset");
         }
     }
 }

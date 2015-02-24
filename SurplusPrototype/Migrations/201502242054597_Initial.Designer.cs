@@ -7,13 +7,13 @@ namespace SurplusPrototype.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.2-31219")]
-    public sealed partial class NumericStringProps : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(NumericStringProps));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201502172051092_NumericStringProps"; }
+            get { return "201502242054597_Initial"; }
         }
         
         string IMigrationMetadata.Source

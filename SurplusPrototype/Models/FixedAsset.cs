@@ -9,11 +9,11 @@ namespace SurplusPrototype.Models
 {
     public class FixedAsset
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]
         [StringLength(9)]
-        [Index]
         public string AssetNumber { get; set; }
     }
 }
