@@ -147,7 +147,24 @@
     <Compile Include="Migrations\201502172051092_NumericStringProps.Designer.cs">
       <DependentUpon>201502172051092_NumericStringProps.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502241940370_FixedAssetModel.cs" />
+    <Compile Include="Migrations\201502241940370_FixedAssetModel.Designer.cs">
+      <DependentUpon>201502241940370_FixedAssetModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502241959580_RefinedFixedAssetModel.cs" />
+    <Compile Include="Migrations\201502241959580_RefinedFixedAssetModel.Designer.cs">
+      <DependentUpon>201502241959580_RefinedFixedAssetModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502242003138_IX_FixedAssetNumber.cs" />
+    <Compile Include="Migrations\201502242003138_IX_FixedAssetNumber.Designer.cs">
+      <DependentUpon>201502242003138_IX_FixedAssetNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502242009104_FixedAssetId.cs" />
+    <Compile Include="Migrations\201502242009104_FixedAssetId.Designer.cs">
+      <DependentUpon>201502242009104_FixedAssetId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\FixedAsset.cs" />
     <Compile Include="Models\ItemCondition.cs" />
     <Compile Include="Models\QuantityDescription.cs" />
     <Compile Include="Models\SurplusRequest.cs" />
@@ -317,6 +334,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502172051092_NumericStringProps.resx">
       <DependentUpon>201502172051092_NumericStringProps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502241940370_FixedAssetModel.resx">
+      <DependentUpon>201502241940370_FixedAssetModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502241959580_RefinedFixedAssetModel.resx">
+      <DependentUpon>201502241959580_RefinedFixedAssetModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502242003138_IX_FixedAssetNumber.resx">
+      <DependentUpon>201502242003138_IX_FixedAssetNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502242009104_FixedAssetId.resx">
+      <DependentUpon>201502242009104_FixedAssetId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

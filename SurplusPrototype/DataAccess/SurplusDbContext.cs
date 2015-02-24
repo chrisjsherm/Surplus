@@ -12,6 +12,7 @@ namespace SurplusPrototype.DataAccess
     {
         public SurplusDbContext() : base("SurplusDbContext") { }
 
+        public DbSet<FixedAsset> FixedAssets { get; set; }
         public DbSet<ItemCondition> ItemConditions { get; set; }
         public DbSet<QuantityDescription> QuantityDescriptions { get; set; }
         public DbSet<SurplusRequest> SurplusRequests { get; set; }

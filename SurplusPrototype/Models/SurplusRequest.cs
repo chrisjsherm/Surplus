@@ -1,19 +1,30 @@
 ﻿using SurplusPrototype.DataAccess;
 using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.Configuration;
 
 namespace SurplusPrototype.Models
 {
     [CustomValidation(typeof(FixedAssetValidationAttribute), "HasValidFixedAssetQuantity")]
     public class SurplusRequest
     {
+        public SurplusRequest()
+        {
+            VTBarcode = WebConfigurationManager
+                .AppSettings["notFixedAssetSentinel"];
+            Quantity = 1;
+        }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
         [StringLength(9)]
         [Display(Name = "Virginia Tech asset number")]
+        [CustomValidation(typeof(FixedAssetValidationAttribute),
+            "FixedAssetWithVTTitleExists")]
         public string VTBarcode { get; set; }
 
         [Required]
@@ -91,8 +102,10 @@ namespace SurplusPrototype.Models
         [Display(Name = "Additional details")]
         public string AdditionalDetails { get; set; }
 
-        private const string ACCOUNTING_FUND_ERROR_MSG = "A six digit accounting fund is required.";
-        private const string DEPARTMENT_NUMBER_ERROR_MSG = "A six digit organization code is required.";
-        private const string NUMERIC_ONLY_NO_SPACES_REGEX = @"^\d+$";
+        private const string ACCOUNTING_FUND_ERROR_MSG = 
+            "A six digit accounting fund is required.";
+        private const string DEPARTMENT_NUMBER_ERROR_MSG = 
+            "A six digit organization code is required.";
+        private const string NUMERIC_ONLY_NO_SPACES_REGEX = @"^\d+$";           
     }
 }

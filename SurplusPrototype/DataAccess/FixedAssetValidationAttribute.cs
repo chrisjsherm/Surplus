@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using SurplusPrototype.Models;
 using System.Web.Configuration;
+using System.Linq;
 
 namespace SurplusPrototype.DataAccess
 {
@@ -25,6 +26,25 @@ namespace SurplusPrototype.DataAccess
 
             return new ValidationResult("Fixed assets must have a " +
                 "quantity equal to one.", new List<string>() { "Quantity" });
+        }
+
+        public static ValidationResult FixedAssetWithVTTitleExists(string assetNumber)
+        {
+            var errorMessage = "Virginia Tech does not have title " +
+                "to a fixed asset with the number " +
+                assetNumber + ".";
+
+            var db = new SurplusDbContext();
+
+            var surplusRequest = db.FixedAssets
+                .FirstOrDefault(a => a.AssetNumber == assetNumber);
+
+            if (surplusRequest != null)
+            {
+                return ValidationResult.Success;
+            }
+
+            return new ValidationResult(errorMessage);
         }
     }
 }

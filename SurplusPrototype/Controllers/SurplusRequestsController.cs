@@ -52,7 +52,7 @@ namespace SurplusPrototype.Controllers
             ViewBag.QuantityDescriptionId = new SelectList(db.QuantityDescriptions, "Id", "Name")
                 .OrderBy(c => c.Text);
 
-            return View();
+            return View(new SurplusRequest());
         }
 
         // POST: SurplusRequests/Create

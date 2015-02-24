@@ -17,6 +17,14 @@ namespace SurplusPrototype.Migrations
 
         protected override void Seed(SurplusPrototype.DataAccess.SurplusDbContext context)
         {
+            var fixedAssets = new List<FixedAsset>
+            {
+                new FixedAsset { AssetNumber = "AAA111111" },
+                new FixedAsset { AssetNumber = "BBB222222" }
+            };
+            fixedAssets.ForEach(a => context.FixedAssets.AddOrUpdate(x => x.AssetNumber));
+            context.SaveChanges();
+
             var itemConditions = new List<ItemCondition>
             {
                 new ItemCondition { Name = "Good" },
