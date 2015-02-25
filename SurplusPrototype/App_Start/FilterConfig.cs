@@ -12,7 +12,7 @@ namespace SurplusPrototype
             // Force requests into role authorization pipeline.
             if (HttpContext.Current.IsDebuggingEnabled)
             {
-                filters.Add(new AuthorizeAttribute() { Roles = "VT-EMPLOYEE" });
+                filters.Add(new AuthorizeAttribute());
             }
         }
     }
