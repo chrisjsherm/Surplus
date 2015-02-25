@@ -8,6 +8,12 @@ namespace SurplusPrototype
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+
+            // Force requests into role authorization pipeline.
+            if (HttpContext.Current.IsDebuggingEnabled)
+            {
+                filters.Add(new AuthorizeAttribute() { Roles = "VT-EMPLOYEE" });
+            }
         }
     }
 }
