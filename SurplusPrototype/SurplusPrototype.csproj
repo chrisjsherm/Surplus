@@ -293,6 +293,8 @@
     <Content Include="scss\_bootstrap-sprockets.scss" />
     <Content Include="scss\_bootstrap.scss" />
     <Content Include="scss\app.scss" />
+    <Content Include="scss\app\_text.scss" />
+    <Content Include="scss\app\_functions.scss" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

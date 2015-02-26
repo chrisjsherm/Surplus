@@ -1,1 +1,8 @@
-﻿@import "_bootstrap.scss"; 
+﻿// SASS functions.
+@import "app/_functions.scss";
+
+// Bootstrap.
+@import "_bootstrap.scss";
+
+// Custom components.
+/*@import "app/_text.scss";*/

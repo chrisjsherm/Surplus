@@ -33,7 +33,10 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         cwd: 'bower_components/bootstrap-sass-official/assets/stylesheets/',
-                        src: ['**/*.scss'],
+                        src: [
+                            '**/*.scss',
+                            '!**/_variables.scss',
+                            '!**/_bootstrap.scss'],
                         dest: 'scss/'
                     }
                 ]
