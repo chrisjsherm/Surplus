@@ -10,10 +10,10 @@ namespace SurplusPrototype
             filters.Add(new HandleErrorAttribute());
 
             // Force requests into role authorization pipeline.
-            if (HttpContext.Current.IsDebuggingEnabled)
-            {
-                filters.Add(new AuthorizeAttribute());
-            }
+            //if (!HttpContext.Current.IsDebuggingEnabled)
+            //{
+            //    filters.Add(new AuthorizeAttribute());
+            //}
         }
     }
 }

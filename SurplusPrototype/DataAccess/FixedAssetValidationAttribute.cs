@@ -30,6 +30,12 @@ namespace SurplusPrototype.DataAccess
 
         public static ValidationResult FixedAssetWithVTTitleExists(string assetNumber)
         {
+            if (assetNumber == WebConfigurationManager
+                .AppSettings["notFixedAssetSentinel"])
+            {
+                return ValidationResult.Success;
+            }
+            
             var errorMessage = "Virginia Tech does not have title " +
                 "to a fixed asset with the number " +
                 assetNumber + ".";
